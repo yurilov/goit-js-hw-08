@@ -27,6 +27,11 @@ function onFormSubmit(event) {
     message: event.currentTarget.message.value,
   };
 
+  if (submittedData.email === '' || submittedData.message === '') {
+    alert('Please fill all fields!');
+    return;
+  }
+
   console.log(submittedData);
 
   localStorage.removeItem(LOCAL_KEY);
